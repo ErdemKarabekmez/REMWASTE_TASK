@@ -8,7 +8,7 @@
 - The relevant "**_java classes_**" are located under the src/test/java/com/remwaste directory.
 - Test datas are stored in the "**_configuration.properties_**" file. You can easily modify browser types and URLs from this file
 - The project follows the "**_Page Object Model (POM)_**" structure.
-- "**_Test reports_**" can be found at target/default-cucumber-report.html file.
+- "**_Test reports_**" can be found at target/default-cucumber-reports.html file.
 - Some pages and methods in the project contain explanatory notes.
 - In API testing, I used the Rest Assured, Hamcrest, and JSONObject libraries.
 - To run the tests, open the project in IntelliJ IDEA and click the green icon next to the CukeRunner class. This will execute the associated scenarios.
