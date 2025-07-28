@@ -14,6 +14,11 @@ import org.openqa.selenium.WebElement;
 
 public class UiSteps extends ReusableMethods {
 
+    /***
+     This class contains Cucumber step definitions for general UI interactions.
+     It includes steps for navigating through the web application, interacting with UI elements,
+     and verifying UI-related behaviors and validations across different scenarios.
+     ***/
     Faker faker = new Faker();
 
     UiPage uiPage = new UiPage();
@@ -90,12 +95,14 @@ public class UiSteps extends ReusableMethods {
 
     @When("the user clicks on the update button")
     public void the_user_clicks_on_the_update_button() {
+
         uiPage.updateButton.click();
 
     }
 
     @When("the user updates the title field")
     public void the_user_updates_the_title_field() {
+
         uiPage.titleInputBox.sendKeys(" update");
 
     }
@@ -123,9 +130,9 @@ public class UiSteps extends ReusableMethods {
 
     @When("the user should see a success delete message")
     public void the_user_should_see_a_success_delete_message() {
+
         waitVisibilityOfElement(uiPage.successDeleteMessage, 5);
         uiPage.assertSuccessDeleteMessage();
-
 
     }
 

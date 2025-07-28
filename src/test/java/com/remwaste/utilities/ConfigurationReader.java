@@ -8,7 +8,6 @@ public class ConfigurationReader {
 
     /***
      This class retrieves data from the configuration properties.
-
      ***/
     private static Properties properties;
 

@@ -53,21 +53,31 @@ public class UiPage {
     @FindBy (xpath = "//div[@role='alert']")
     public WebElement successDeleteMessage;
 
-
+    /***
+     This method retrieves the last WebElement from the 'allBlogs' list
+     and performs a click action on it.
+     ***/
     public void lastBlogClick(){
         WebElement lastBlog = allBlogs.get(allBlogs.size()-1);
         lastBlog.click();
 
     }
 
+    /***
+      This method Verifies that the success update message displayed on the UI
+      matches the expected message "Record Updated".
+     ***/
     public void assertSuccessUpdateMessage(){
-
         String expectedSuccessUpdateMessage = "Record Updated";
         String actualSuccessUpdateMessage = successUpdateMessage.getText();
         Assert.assertEquals(expectedSuccessUpdateMessage,actualSuccessUpdateMessage);
 
     }
 
+    /***
+     This method Verifies that the success delete message displayed on the UI
+     matches the expected message "Record Deleted".
+     ***/
     public void assertSuccessDeleteMessage(){
         String expectedSuccessDeleteMessage = "Record Deleted";
         String actualSuccessDeleteMessage = successDeleteMessage.getText();

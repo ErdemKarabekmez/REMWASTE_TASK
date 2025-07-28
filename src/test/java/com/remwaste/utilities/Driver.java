@@ -11,6 +11,13 @@ import java.time.Duration;
 
 public class Driver {
 
+    /***
+     This class manages browser driver instance.
+     This class ensures that only one WebDriver instance is created and used throughout
+     the test execution, providing methods to initialize, get, and quit the driver.
+     It also supports browser type selection (e.g., Chrome, Firefox)
+     based on configuration, allowing flexible browser switching.
+     ***/
     private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
 
     public static WebDriver getDriver() {

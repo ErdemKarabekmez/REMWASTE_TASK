@@ -114,12 +114,13 @@
                             <outputDirectory>${project.build.directory}</outputDirectory>
                             <inputDirectory>${project.build.directory}</inputDirectory>
                             <jsonFiles>
-                                <param>**/cucumber*.json</param>
+                                <param>/cucumber*.json</param>
                             </jsonFiles>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>
+                </plugin>
+
         </plugins>
     </build>
 

@@ -7,7 +7,10 @@ import io.cucumber.java.Scenario;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-
+/***
+ * This Hooks class contains teardown methods that run after Cucumber scenarios.
+ * Typical usage includes taking screenshots on failure, and closing the browser.
+ ***/
 public class Hooks {
 
     @After

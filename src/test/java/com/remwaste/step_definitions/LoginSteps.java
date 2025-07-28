@@ -13,6 +13,12 @@ import org.junit.Assert;
 
 public class LoginSteps extends ReusableMethods {
 
+    /***
+     This class contains Cucumber step definitions related to login functionality.
+     It implements the steps used in feature files to test various login scenarios,
+     such as logging in with valid/invalid credentials, handling error messages,
+     and verifying successful login.
+     ***/
     LoginPage loginPage = new LoginPage();
 
     @Given("the user navigates to the homepage")
@@ -25,6 +31,7 @@ public class LoginSteps extends ReusableMethods {
     public void the_user_clicks_on_the_user_icon_at_the_top_right_corner() {
 
         loginPage.userIcon.click();
+
     }
 
     @When("the user selects the Login option from the dropdown")
@@ -44,7 +51,6 @@ public class LoginSteps extends ReusableMethods {
     public void the_user_enters_a_valid_email_address_and_password_and_clicks_the_login_button() {
 
         loginPage.loginWithValidCredentials();
-
 
     }
 
@@ -73,7 +79,6 @@ public class LoginSteps extends ReusableMethods {
 
     @When("the user should see an error message")
     public void the_user_should_see_an_error_message() {
-
 
         loginPage.assertErrorMessage();
 
@@ -108,6 +113,5 @@ public class LoginSteps extends ReusableMethods {
         loginPage.loginWithLeaveEmailAddressInputBoxBlankAndLeavePasswordInputBoxBlank();
         waitVisibilityOfElement(loginPage.alertMessage,5);
     }
-
 
     }

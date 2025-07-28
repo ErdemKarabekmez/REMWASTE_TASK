@@ -11,7 +11,6 @@ public class ReusableMethods {
 
     /***
      This class contains some methods used in the project.
-
      ***/
 
 
@@ -22,6 +21,7 @@ public class ReusableMethods {
 
         JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
         jse.executeScript("arguments[0].click();", element);
+
     }
 
 
@@ -32,6 +32,7 @@ public class ReusableMethods {
 
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(second));
         wait.until(ExpectedConditions.visibilityOf(element));
+
     }
 
 

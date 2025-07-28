@@ -22,6 +22,12 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class HerokuAppApiSteps {
 
+    /***
+     This class contains API step definitions for interacting with the HerokuApp RESTful service.
+     It includes methods to perform API operations such as GET, POST, PUT, DELETE requests,
+     and corresponding validations, using tools like Rest Assured.
+     These steps are used in Cucumber feature files to automate API testing scenarios.
+     ***/
     protected RequestSpecification specHerokuApp;
     Response response;
 
@@ -66,7 +72,6 @@ public class HerokuAppApiSteps {
 
         response = given().spec(specHerokuApp).contentType(ContentType.JSON)
                 .when().get("/{pp1}");
-
 
     }
 
@@ -133,13 +138,10 @@ public class HerokuAppApiSteps {
                 .when().body(requestBody)
                 .post("/{pp1}");
 
-
-
     }
 
     @Then("the response should contain the same booking details")
     public void the_response_should_contain_the_same_booking_details() {
-
 
         response.then()
                 .body("booking.firstname", equalTo("Olivia"))
@@ -150,16 +152,14 @@ public class HerokuAppApiSteps {
                 .body("booking.bookingdates.checkout", equalTo("2019-01-01"))
                 .body("booking.additionalneeds", equalTo("Breakfast"));
 
-
         response.prettyPrint();
 
-
     }
+
     @Given("the user updates an existing booking with the following data")
     public void the_user_updates_an_existing_booking_with_the_following_data(DataTable dataTable) {
 
         Map<String, String> data = dataTable.asMap(String.class, String.class);
-
         Map<String, String> bookingdates = new HashMap<>();
         bookingdates.put("checkin", data.get("checkin"));
         bookingdates.put("checkout", data.get("checkout"));
@@ -192,7 +192,6 @@ public class HerokuAppApiSteps {
                 .body("bookingdates.checkin", equalTo("2018-01-01"))
                 .body("bookingdates.checkout", equalTo("2019-01-01"))
                 .body("additionalneeds", equalTo("Breakfast"));
-
 
     }
 
@@ -239,7 +238,6 @@ public class HerokuAppApiSteps {
                 .auth().preemptive().basic("admin1222", "password123").when().body(booking)
                 .put("/{pp1}/{pp2}");
 
-
     }
 
     @Then("the response status code should be 403")
@@ -248,8 +246,5 @@ public class HerokuAppApiSteps {
         response.then().assertThat().statusCode(403);
 
     }
-
-
-
 
 }
