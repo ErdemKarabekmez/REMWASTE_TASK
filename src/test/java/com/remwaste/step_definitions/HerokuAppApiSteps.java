@@ -67,8 +67,6 @@ public class HerokuAppApiSteps {
         response = given().spec(specHerokuApp).contentType(ContentType.JSON)
                 .when().get("/{pp1}");
 
-        response.prettyPrint();
-
 
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="5.033" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-28T12:49:25.875570100Z">
-<testcase classname="Creating, editing, and deleting blog posts (UI Tests)" name="User creates a new blog post successfully" time="4.877">
+<testsuite name="Cucumber" time="5.885" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-28T14:32:57.067003Z">
+<testcase classname="Creating, editing, and deleting blog posts (UI Tests)" name="User creates a new blog post successfully" time="5.743">
 <system-out><![CDATA[
 Given the user is logged in to the platform.................................passed
 When the user clicks on the user icon at the top right corner...............passed
