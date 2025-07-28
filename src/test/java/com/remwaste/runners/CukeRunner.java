@@ -23,9 +23,13 @@ import org.junit.runner.RunWith;
         },
 
         features = "src/test/resources",
-        glue = "com/remwaste/step_definitions",
+        //glue = "com/remwaste/step_definitions",
+        glue = "com.remwaste.step_definitions",
         dryRun = false,
-        tags = "@scenario_11"
+        tags = "@scenario_7"
+
+
+
 )
 public class CukeRunner {
 }
