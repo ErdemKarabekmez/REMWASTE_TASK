@@ -66,7 +66,6 @@ public class LoginSteps extends ReusableMethods {
     public void the_user_should_see_the_name_displayed_at_the_top_right_corner() {
 
         Assert.assertEquals("Erdem", loginPage.userNameText.getText());
-        Driver.closeDriver();
 
     }
 

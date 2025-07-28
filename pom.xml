@@ -22,13 +22,6 @@
             <version>4.34.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
-        <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.8.0</version>
-        </dependency>
-
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -91,7 +84,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <includes>
-                        <include>**/*CukeRunner.java</include>  <!-- Runner dosya adın buraya uygun olmalı -->
+                        <include>**/*CukeRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
