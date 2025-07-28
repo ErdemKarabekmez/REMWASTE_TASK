@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="5.033" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-07-28T12:49:25.875570100Z">
+<testcase classname="Creating, editing, and deleting blog posts (UI Tests)" name="User creates a new blog post successfully" time="4.877">
+<system-out><![CDATA[
+Given the user is logged in to the platform.................................passed
+When the user clicks on the user icon at the top right corner...............passed
+And the user selects the New option from the dropdown.......................passed
+And the user is redirected to the new blog page in the same tab.............passed
+And the user enters a title into the title input box........................passed
+And the user enters an image url into the image url input box...............passed
+And the user enters blog details into the detail input box..................passed
+And the user clicks on the add new blog button..............................passed
+Then the new blog post should appear on the blog dashboard..................passed
+]]></system-out>
+</testcase>
+</testsuite>
