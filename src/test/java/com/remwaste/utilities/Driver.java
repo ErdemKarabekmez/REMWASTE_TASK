@@ -27,33 +27,19 @@ public class Driver {
     public static WebDriver getDriver() {
         if (driverPool.get() == null) {
 
-           /* switch (ConfigurationReader.get("browser")) {
-                case "chrome":
-                    driverPool.set(new ChromeDriver());
-                    break;
-
-            */
-
             switch (ConfigurationReader.get("browser")) {
                 case "chrome":
                     ChromeOptions options = new ChromeOptions();
-
-                    // Headless parametresi dışarıdan geliyorsa:
-                    if ("true".equals(System.getProperty("headless"))) {
-                        options.addArguments("--headless=new");
-                    }
-
+                    options.addArguments("--headless=new");
                     options.addArguments("--no-sandbox");
                     options.addArguments("--disable-dev-shm-usage");
 
-                    // Benzersiz user-data-dir (özellikle CI/CD için)
                     try {
                         Path tempProfile = Files.createTempDirectory("chrome-profile-" + System.nanoTime());
                         options.addArguments("--user-data-dir=" + tempProfile.toAbsolutePath().toString());
                     } catch (Exception e) {
-                        System.out.println("Temp chrome profile oluşturulamadı: " + e.getMessage());
+                        System.out.println("Temp chrome profile could not created: " + e.getMessage());
                     }
-
                     driverPool.set(new ChromeDriver(options));
                     break;
                 case "edge":

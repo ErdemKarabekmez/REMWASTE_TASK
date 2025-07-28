@@ -25,7 +25,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "com.remwaste.step_definitions",
         dryRun = false,
-        tags = "@scenario_12"
+        tags = "@scenario_1"
 
 
 
