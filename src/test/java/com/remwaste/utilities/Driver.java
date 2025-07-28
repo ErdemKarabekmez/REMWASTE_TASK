@@ -1,6 +1,7 @@
 package com.remwaste.utilities;
 
 
+import org.junit.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -47,10 +48,9 @@ public class Driver {
 
                     // Benzersiz user-data-dir (özellikle CI/CD için)
                     try {
-                        Path tempProfile = Files.createTempDirectory("chrome-profile");
+                        Path tempProfile = Files.createTempDirectory("chrome-profile-" + System.nanoTime());
                         options.addArguments("--user-data-dir=" + tempProfile.toAbsolutePath().toString());
                     } catch (Exception e) {
-                        // Hata olursa logla, ama testleri durdurma
                         System.out.println("Temp chrome profile oluşturulamadı: " + e.getMessage());
                     }
 
@@ -79,6 +79,7 @@ public class Driver {
 
     }
 
+    @After
     public static void closeDriver() {
 
         if (driverPool.get() != null) {

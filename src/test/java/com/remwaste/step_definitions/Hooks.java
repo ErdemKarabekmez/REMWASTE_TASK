@@ -13,13 +13,27 @@ import org.openqa.selenium.TakesScreenshot;
  ***/
 public class Hooks {
 
-    @After
+   /* @After
     public void tearDown(Scenario scenario) throws Exception {
        if (scenario.isFailed()) {
            TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
            scenario.attach(ts.getScreenshotAs(OutputType.BYTES), "image/png", "scenario_" + scenario.getName());
            Driver.closeDriver();
        }
-        }
+        }*/
+   @After
+   public void tearDown(Scenario scenario) {
+       // Senaryo başarısızsa screenshot al
+       if (scenario.isFailed()) {
+           try {
+               TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();
+               scenario.attach(ts.getScreenshotAs(OutputType.BYTES), "image/png", "scenario_" + scenario.getName());
+           } catch (Exception e) {
+               System.out.println("Screenshot alınamadı: " + e.getMessage());
+           }
+       }
+       // Her durumda driver'ı kapat
+       Driver.closeDriver();
+   }
     }
 
