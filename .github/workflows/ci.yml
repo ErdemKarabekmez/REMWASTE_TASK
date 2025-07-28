@@ -30,9 +30,16 @@ jobs:
       - name: Build and run tests
         run: mvn clean verify
 
-      - name: Upload test report
+      - name: Upload Cucumber Report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: cucumber-report
           path: target/default-cucumber-reports.html
+
+      - name: Upload Screenshots (optional)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: target/screenshots/
