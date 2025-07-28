@@ -26,7 +26,7 @@ import org.junit.runner.RunWith;
         //glue = "com/remwaste/step_definitions",
         glue = "com.remwaste.step_definitions",
         dryRun = false,
-        tags = "@scenario_7"
+        tags = "@scenario_11"
 
 
 
