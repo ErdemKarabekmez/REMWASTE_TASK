@@ -17,4 +17,5 @@
 - Some pages and methods in the project contain explanatory notes.
 - In API testing, I used the Rest Assured, Hamcrest, and JSONObject libraries.
 - The available scenario tags can be found at the top of each scenario inside the feature files located under the resources directory.
+- The test "**_plan documentation_**" for this project can be found at the following link: https://docs.google.com/document/d/1sG0-q1V8KNcARnPvMuWbOomOVej4wWh-/edit?usp=drive_link&ouid=103984635912967170585&rtpof=true&sd=true
 
