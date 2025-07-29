@@ -160,16 +160,16 @@ public class HerokuAppApiSteps {
     public void the_user_updates_an_existing_booking_with_the_following_data(DataTable dataTable) {
 
         Map<String, String> data = dataTable.asMap(String.class, String.class);
-        Map<String, String> bookingdates = new HashMap<>();
-        bookingdates.put("checkin", data.get("checkin"));
-        bookingdates.put("checkout", data.get("checkout"));
+        Map<String, String> bookingDates = new HashMap<>();
+        bookingDates.put("checkin", data.get("checkin"));
+        bookingDates.put("checkout", data.get("checkout"));
 
         Map<String, Object> booking = new HashMap<>();
         booking.put("firstname", data.get("firstname"));
         booking.put("lastname", data.get("lastname"));
         booking.put("totalprice", Integer.parseInt(data.get("totalprice")));
         booking.put("depositpaid", Boolean.parseBoolean(data.get("depositpaid")));
-        booking.put("bookingdates", bookingdates);
+        booking.put("bookingdates", bookingDates);
         booking.put("additionalneeds", data.get("additionalneeds"));
 
         specHerokuApp = new RequestSpecBuilder().setBaseUri(ConfigurationReader.get("baseUri")).build();
@@ -199,7 +199,7 @@ public class HerokuAppApiSteps {
     public void the_user_deletes_the_existing_booking() {
 
         specHerokuApp = new RequestSpecBuilder().setBaseUri(ConfigurationReader.get("baseUri")).build();
-        specHerokuApp.pathParams("pp1", "booking","pp2","79");
+        specHerokuApp.pathParams("pp1", "booking","pp2","87");
 
         response = given().spec(specHerokuApp)
                 .auth().preemptive().basic("admin", "password123")
@@ -208,7 +208,7 @@ public class HerokuAppApiSteps {
 
     }
     @Then("Then the user should verify that the booking is successfully deleted")
-    public void then_the_user_should_verify_that_the_booking_is_successfully_deleted() throws InterruptedException {
+    public void then_the_user_should_verify_that_the_booking_is_successfully_deleted()  {
 
         response.then().statusCode(201);
 
@@ -219,20 +219,20 @@ public class HerokuAppApiSteps {
 
         Map<String, String> data = dataTable.asMap(String.class, String.class);
 
-        Map<String, String> bookingdates = new HashMap<>();
-        bookingdates.put("checkin", data.get("checkin"));
-        bookingdates.put("checkout", data.get("checkout"));
+        Map<String, String> bookingDates = new HashMap<>();
+        bookingDates.put("checkin", data.get("checkin"));
+        bookingDates.put("checkout", data.get("checkout"));
 
         Map<String, Object> booking = new HashMap<>();
         booking.put("firstname", data.get("firstname"));
         booking.put("lastname", data.get("lastname"));
         booking.put("totalprice", Integer.parseInt(data.get("totalprice")));
         booking.put("depositpaid", Boolean.parseBoolean(data.get("depositpaid")));
-        booking.put("bookingdates", bookingdates);
+        booking.put("bookingdates", bookingDates);
         booking.put("additionalneeds", data.get("additionalneeds"));
 
         specHerokuApp = new RequestSpecBuilder().setBaseUri(ConfigurationReader.get("baseUri")).build();
-        specHerokuApp.pathParams("pp1", "booking","pp2","79");
+        specHerokuApp.pathParams("pp1", "booking","pp2","68");
 
         response = given().spec(specHerokuApp).contentType(ContentType.JSON)
                 .auth().preemptive().basic("admin1222", "password123").when().body(booking)
